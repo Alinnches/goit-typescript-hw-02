@@ -1,8 +1,14 @@
 import React from "react";
 import ReactModal from "react-modal";
 import s from "./ImageModal.module.css";
+import { UnsplashImage } from "../../types";
 
-const ImageModal = ({ image, setModalImage }) => {
+interface Props {
+  image: UnsplashImage | null;
+  setModalImage: (image: UnsplashImage | null) => void;
+}
+
+const ImageModal: React.FC<Props> = ({ image, setModalImage }) => {
   if (!image) return null;
 
   return (

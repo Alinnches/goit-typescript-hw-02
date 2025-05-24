@@ -1,7 +1,13 @@
 import React from "react";
 import s from "./ImageCard.module.css";
+import { UnsplashImage } from "../../../types";
 
-const ImageCard = ({ image, setModalImage }) => {
+interface Props {
+  image: UnsplashImage;
+  setModalImage: (image: UnsplashImage) => void;
+}
+
+const ImageCard: React.FC<Props> = ({ image, setModalImage }) => {
   return (
     <div className={s.card}>
       <img

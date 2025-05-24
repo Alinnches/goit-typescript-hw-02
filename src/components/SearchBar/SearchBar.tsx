@@ -1,11 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import s from "./SearchBar.module.css";
 
-const SearchBar = ({ onSubmit, setQuery }) => {
-  const [inputValue, setInputValue] = useState("");
+interface Props {
+  onSubmit: (e: FormEvent) => void;
+  setQuery: (query: string) => void;
+}
 
-  const handleChange = (e) => {
+const SearchBar: React.FC<Props> = ({ onSubmit, setQuery }) => {
+  const [inputValue, setInputValue] = useState<string>("");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setInputValue(e.target.value);
     setQuery(e.target.value);
   };

@@ -1,17 +1,22 @@
 import React from "react";
 import { RingLoader } from "react-spinners";
+import { CSSProperties } from "react";
 
-const override = {
-  display: "blok",
-  margin: "0, auto",
+interface Props {
+  loading: boolean;
+}
+
+const override: CSSProperties = {
+  display: "block",
+  margin: "0 auto",
   borderColor: "blue",
   position: "absolute",
   top: "50%",
   left: "50%",
-  transform: "translate(-50%, -50%",
+  transform: "translate(-50%, -50%)",
 };
 
-const Loader = ({ loading }) => {
+const Loader: React.FC<Props> = ({ loading }) => {
   return (
     <RingLoader
       color="#00BFFF"

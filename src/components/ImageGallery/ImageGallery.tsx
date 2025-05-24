@@ -1,8 +1,14 @@
 import React from "react";
 import ImageCard from "./ImageCard/ImageCard";
 import s from "./ImageGallery.module.css";
+import { UnsplashImage } from "../../types";
 
-const ImageGallery = ({ images, setModalImage }) => {
+interface Props {
+  images: UnsplashImage[];
+  setModalImage: (image: UnsplashImage) => void;
+}
+
+const ImageGallery: React.FC<Props> = ({ images, setModalImage }) => {
   if (images.length === 0) return null;
 
   return (
